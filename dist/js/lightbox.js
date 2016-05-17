@@ -447,6 +447,10 @@
     if (this.options.disableScrolling) {
       $('body').removeClass('lb-disable-scrolling');
     }
+    var callback = this.options.onClose;
+    if($.isFunction(callback)) {
+      callback.call();
+    }
   };
 
   return new Lightbox();
